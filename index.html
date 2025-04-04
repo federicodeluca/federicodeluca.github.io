@@ -123,21 +123,36 @@
     </section>
   </div>
 
-  <footer>
-    © 2025 Federico De Luca – All rights reserved.
-  </footer>
+<div class="contact">
+  <h2>📬 <span id="contact-title-en">Contact Me</span><span id="contact-title-it" style="display:none">Contattami</span></h2>
+  <p id="contact-en">I'm open to new opportunities and collaborations.</p>
+  <p id="contact-it" style="display:none">Sono disponibile per opportunità e collaborazioni.</p>
+  <a id="contact-link-en" href="mailto:federicocertosa216@gmail.com">Send me an email</a>
+  <a id="contact-link-it" href="mailto:federicocertosa216@gmail.com" style="display:none">Scrivimi una mail</a>
+</div>
 
-  <script>
-    function setLang(lang) {
-      const show = lang === 'en';
-      document.getElementById('bio-en').style.display = show ? 'block' : 'none';
-      document.getElementById('bio-it').style.display = show ? 'none' : 'block';
-      document.getElementById('ai-en').style.display = show ? 'block' : 'none';
-      document.getElementById('ai-it').style.display = show ? 'none' : 'block';
-      document.getElementById('gen-en').style.display = show ? 'block' : 'none';
-      document.getElementById('gen-it').style.display = show ? 'none' : 'block';
-    }
-  </script>
+<footer>
+  © 2025 Federico De Luca – All rights reserved.
+</footer>
+
+<script>
+  function setLang(lang) {
+    const show = lang === 'en';
+    document.getElementById('bio-en').style.display = show ? 'block' : 'none';
+    document.getElementById('bio-it').style.display = show ? 'none' : 'block';
+    document.getElementById('ai-en').style.display = show ? 'block' : 'none';
+    document.getElementById('ai-it').style.display = show ? 'none' : 'block';
+    document.getElementById('gen-en').style.display = show ? 'block' : 'none';
+    document.getElementById('gen-it').style.display = show ? 'none' : 'block';
+    document.getElementById('contact-en').style.display = show ? 'block' : 'none';
+    document.getElementById('contact-it').style.display = show ? 'none' : 'block';
+    document.getElementById('contact-title-en').style.display = show ? 'inline' : 'none';
+    document.getElementById('contact-title-it').style.display = show ? 'none' : 'inline';
+    document.getElementById('contact-link-en').style.display = show ? 'inline-block' : 'none';
+    document.getElementById('contact-link-it').style.display = show ? 'none' : 'inline-block';
+  }
+</script>
+
 </body>
 </html>
 
