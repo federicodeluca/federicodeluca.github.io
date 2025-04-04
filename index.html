@@ -1,58 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Federico De Luca | Portfolio</title>
-  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/1/1b/R_logo.svg" type="image/svg+xml" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #1e3a8a, #3b82f6);
-      color: white;
-    }
-    header {
-      text-align: center;
-      padding: 3rem 2rem 2rem;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-    header p {
-      font-size: 1.2rem;
-      opacity: 0.85;
-    }
-    .lang-toggle {
-      margin-top: 1rem;
-      text-align: center;
+      background: linear-gradient(135deg, #1e3a8a, #2563eb);
+      color: #1e3a8a;
     }
     .container {
-      background: white;
-      color: #1e3a8a;
-      border-radius: 16px;
-      padding: 2rem;
       max-width: 800px;
-      margin: 2rem auto;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      margin: 4rem auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 20px;
     }
-    .project {
-      margin-bottom: 2rem;
-    }
-    .project h3 {
-      margin-top: 0;
-      color: #2563eb;
-    }
-    .badges {
-      margin-top: 1rem;
-    }
-    .badges img {
-      height: 28px;
-      margin-right: 10px;
-      vertical-align: middle;
+    h1, h2, h3 {
+      color: #1e3a8a;
     }
     a {
       color: #2563eb;
@@ -63,96 +31,87 @@
     }
     footer {
       text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      color: #dbeafe;
-    }
-    button {
-      background: #2563eb;
-      border: none;
       color: white;
-      padding: 0.5rem 1rem;
-      margin: 0 0.25rem;
-      border-radius: 6px;
-      cursor: pointer;
+      padding: 2rem 0;
     }
-    button:hover {
-      background: #1d4ed8;
+    .lang-switch {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+    }
+    .lang-switch button {
+      background: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      margin-left: 0.5rem;
+      font-weight: bold;
+      cursor: pointer;
+      color: #1e3a8a;
+      border-radius: 8px;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Federico De Luca</h1>
-    <p id="tagline">Data Analytics graduate student with a passion for equality, innovation, and open data.</p>
-    <div class="lang-toggle">
-      <button onclick="setLang('en')">EN</button>
-      <button onclick="setLang('it')">IT</button>
-    </div>
-    <div class="badges">
-      <img src="https://img.shields.io/badge/Made%20with-R-1f425f.svg?logo=r" alt="Made with R" />
-      <img src="https://img.shields.io/badge/status-active-brightgreen" alt="Project status: active" />
-    </div>
-  </header>
-
+  <div class="lang-switch">
+    <button onclick="setLang('en')">EN</button>
+    <button onclick="setLang('it')">IT</button>
+  </div>
   <div class="container">
-    <section id="bio-en">
-      <h2>About Me</h2>
-      <p>I’m Federico, a soon-to-graduate Master’s student in Data Analytics. I love using data to explore social topics like gender equality, sustainability, and digital innovation.</p>
-      <p>Find me on <a href="https://linkedin.com/in/federico-de-luca-a18a60215" target="_blank">LinkedIn</a> or explore my <a href="https://github.com/federicodeluca" target="_blank">GitHub</a>.</p>
-    </section>
-
-    <section id="bio-it" style="display:none">
-      <h2>Chi sono</h2>
-      <p>Sono Federico, studente magistrale in Data Analytics quasi alla laurea. Uso i dati per esplorare temi sociali come parità di genere, sostenibilità e innovazione digitale.</p>
-      <p>Mi trovi su <a href="https://linkedin.com/in/federico-de-luca-a18a60215" target="_blank">LinkedIn</a> oppure sul mio <a href="https://github.com/federicodeluca" target="_blank">GitHub</a>.</p>
-    </section>
+    <h2 id="bio-en">About Me</h2>
+    <h2 id="bio-it" style="display:none">Chi sono</h2>
+    <p id="ai-en">I'm Federico, a Master's student in Data Analytics. I use data to explore social topics like gender parity, sustainability, and digital innovation.</p>
+    <p id="ai-it" style="display:none">Sono Federico, studente magistrale in Data Analytics quasi alla laurea. Uso i dati per esplorare temi sociali come parità di genere, sostenibilità e innovazione digitale.</p>
+    <p>
+      <a href="https://www.linkedin.com/in/federico-de-luca-a18a60215" target="_blank">LinkedIn</a> · 
+      <a href="https://github.com/federicodeluca" target="_blank">GitHub</a>
+    </p>
 
     <section class="project">
       <h3>AI Sentiment Analysis</h3>
-      <p id="ai-en">Sentiment and content analysis of articles and tweets about Artificial Intelligence using R (wordclouds, topic modeling, VADER, clustering).</p>
-      <p id="ai-it" style="display:none">Analisi del contenuto e del sentiment su articoli e tweet sull’Intelligenza Artificiale, realizzata in R (wordcloud, topic modeling, VADER, clustering).</p>
+      <p id="gen-en">Sentiment and content analysis of articles and tweets about Artificial Intelligence using R (wordclouds, topic modeling, VADER, clustering).</p>
+      <p id="gen-it" style="display:none">Analisi del contenuto e del sentiment su articoli e tweet sull'Intelligenza Artificiale, realizzata in R (wordcloud, topic modeling, VADER, clustering).</p>
       <a href="https://github.com/federicodeluca/AI_sentiment_analysis" target="_blank">View on GitHub</a>
     </section>
 
     <section class="project">
       <h3>Gender Equality Report</h3>
-      <p id="gen-en">Comparative project on diversity and inclusion strategies in Danone and CNPR. Based on UNI PDR 125:2022, surveys, and R-based analysis.</p>
-      <p id="gen-it" style="display:none">Progetto comparativo sulle strategie di diversity e inclusion in Danone e CNPR. Basato su UNI PDR 125:2022, questionari e analisi in R.</p>
+      <p id="gen2-en">Comparative project on diversity and inclusion strategies in Danone and CNPR. Based on UNI PDR 125:2022, surveys and analysis in R.</p>
+      <p id="gen2-it" style="display:none">Progetto comparativo sulle strategie di diversity e inclusion in Danone e CNPR. Basato su UNI PDR 125:2022, questionari e analisi in R.</p>
       <a href="/Executive_Summary_De_Luca.pdf" target="_blank">Download Executive Summary (PDF)</a>
     </section>
   </div>
 
-<div class="contact">
-  <h2>📬 <span id="contact-title-en">Contact Me</span><span id="contact-title-it" style="display:none">Contattami</span></h2>
-  <p id="contact-en">I'm open to new opportunities and collaborations.</p>
-  <p id="contact-it" style="display:none">Sono disponibile per opportunità e collaborazioni.</p>
-  <a id="contact-link-en" href="mailto:federicocertosa216@gmail.com">Send me an email</a>
-  <a id="contact-link-it" href="mailto:federicocertosa216@gmail.com" style="display:none">Scrivimi una mail</a>
-</div>
+  <div class="contact" style="max-width: 800px; margin: 3rem auto; background: white; padding: 2rem; border-radius: 16px; color: #1e3a8a; text-align: center;">
+    <h2>📬 <span id="contact-title-en">Contact Me</span><span id="contact-title-it" style="display:none">Contattami</span></h2>
+    <p id="contact-en">I'm open to new opportunities and collaborations.</p>
+    <p id="contact-it" style="display:none">Sono disponibile per opportunità e collaborazioni.</p>
+    <a id="contact-link-en" href="mailto:federicocertosa216@gmail.com" style="display: inline-block; margin-top: 1rem; padding: 0.75rem 1.5rem; background-color: #2563eb; color: white; border-radius: 8px; font-weight: 600; text-decoration: none;">Send me an email</a>
+    <a id="contact-link-it" href="mailto:federicocertosa216@gmail.com" style="display:none; margin-top: 1rem; padding: 0.75rem 1.5rem; background-color: #2563eb; color: white; border-radius: 8px; font-weight: 600; text-decoration: none;">Scrivimi una mail</a>
+  </div>
 
-<footer>
-  © 2025 Federico De Luca – All rights reserved.
-</footer>
+  <footer>
+    © 2025 Federico De Luca – All rights reserved.
+  </footer>
 
-<script>
-  function setLang(lang) {
-    const show = lang === 'en';
-    document.getElementById('bio-en').style.display = show ? 'block' : 'none';
-    document.getElementById('bio-it').style.display = show ? 'none' : 'block';
-    document.getElementById('ai-en').style.display = show ? 'block' : 'none';
-    document.getElementById('ai-it').style.display = show ? 'none' : 'block';
-    document.getElementById('gen-en').style.display = show ? 'block' : 'none';
-    document.getElementById('gen-it').style.display = show ? 'none' : 'block';
-    document.getElementById('contact-en').style.display = show ? 'block' : 'none';
-    document.getElementById('contact-it').style.display = show ? 'none' : 'block';
-    document.getElementById('contact-title-en').style.display = show ? 'inline' : 'none';
-    document.getElementById('contact-title-it').style.display = show ? 'none' : 'inline';
-    document.getElementById('contact-link-en').style.display = show ? 'inline-block' : 'none';
-    document.getElementById('contact-link-it').style.display = show ? 'none' : 'inline-block';
-  }
-</script>
-
+  <script>
+    function setLang(lang) {
+      const show = lang === 'en';
+      document.getElementById('bio-en').style.display = show ? 'block' : 'none';
+      document.getElementById('bio-it').style.display = show ? 'none' : 'block';
+      document.getElementById('ai-en').style.display = show ? 'block' : 'none';
+      document.getElementById('ai-it').style.display = show ? 'none' : 'block';
+      document.getElementById('gen-en').style.display = show ? 'block' : 'none';
+      document.getElementById('gen-it').style.display = show ? 'none' : 'block';
+      document.getElementById('gen2-en').style.display = show ? 'block' : 'none';
+      document.getElementById('gen2-it').style.display = show ? 'none' : 'block';
+      document.getElementById('contact-en').style.display = show ? 'block' : 'none';
+      document.getElementById('contact-it').style.display = show ? 'none' : 'block';
+      document.getElementById('contact-title-en').style.display = show ? 'inline' : 'none';
+      document.getElementById('contact-title-it').style.display = show ? 'none' : 'inline';
+      document.getElementById('contact-link-en').style.display = show ? 'inline-block' : 'none';
+      document.getElementById('contact-link-it').style.display = show ? 'none' : 'inline-block';
+    }
+  </script>
 </body>
 </html>
 
