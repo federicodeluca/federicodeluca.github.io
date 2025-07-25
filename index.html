@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Federico De Luca | Portfolio</title>
   <style>
     body {
@@ -49,18 +49,69 @@
       color: #1e3a8a;
       border-radius: 8px;
     }
+    .project {
+      margin-bottom: 2rem;
+      background-color: #f9f9f9;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    /* Splash Screen */
+    #splash-screen {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: #e5f4ff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+    #splash-screen img {
+      width: 120px;
+      margin-bottom: 2rem;
+    }
+    .loader-bar {
+      width: 200px;
+      height: 12px;
+      background: #d0e9ff;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .loader-bar div {
+      height: 100%;
+      width: 0%;
+      background: #60a5fa;
+      animation: load 2.5s forwards;
+      border-radius: 10px;
+    }
+    @keyframes load {
+      100% { width: 100%; }
+    }
   </style>
 </head>
 <body>
+  <div id="splash-screen">
+    <img src="pudgy.png" alt="Loading Penguin" />
+    <div class="loader-bar"><div></div></div>
+  </div>
+
   <div class="lang-switch">
     <button onclick="setLang('en')">EN</button>
     <button onclick="setLang('it')">IT</button>
   </div>
+
   <div class="container">
     <h2 id="bio-en">About Me</h2>
     <h2 id="bio-it" style="display:none">Chi sono</h2>
-    <p id="ai-en">I'm Federico, a Master's student in Data Analytics. I use data to explore social topics like gender parity, sustainability, and digital innovation.</p>
-    <p id="ai-it" style="display:none">Sono Federico, studente magistrale in Data Analytics quasi alla laurea. Uso i dati per esplorare temi sociali come parità di genere, sostenibilità e innovazione digitale.</p>
+    <p id="ai-en">
+      I'm Federico, a Master's graduate in Management Engineering – Data Analytics. I'm passionate about reading, playing chess, traveling, and working on topics like Artificial Intelligence, Deep Learning, and data-driven programming – just like in the projects below.
+    </p>
+    <p id="ai-it" style="display:none">
+      Sono Federico, laureato magistrale in Ingegneria Gestionale – Data Analytics. Mi appassionano la lettura, i viaggi, gli scacchi e l’intelligenza artificiale, in particolare il Deep Learning e la programmazione basata sui dati – proprio come nei progetti che trovi qui sotto.
+    </p>
     <p>
       <a href="https://www.linkedin.com/in/federico-de-luca-a18a60215" target="_blank">LinkedIn</a> · 
       <a href="https://github.com/federicodeluca" target="_blank">GitHub</a>
@@ -79,6 +130,34 @@
       <p id="gen2-it" style="display:none">Progetto comparativo sulle strategie di diversity e inclusion in Danone e CNPR. Basato su UNI PDR 125:2022, questionari e analisi in R.</p>
       <a href="/Executive_Summary_De_Luca.pdf" target="_blank">Download Executive Summary (PDF)</a>
     </section>
+
+    <h2>📊 Machine Learning Projects</h2>
+
+    <section class="project">
+      <h3>Skin Cancer Classification (ML)</h3>
+      <p>Skin lesion classification using SVM and CNN on HAM10000 dataset.</p>
+      <a href="https://github.com/federicodeluca/SkinCancer_Classification_ML" target="_blank">View on GitHub</a>
+    </section>
+
+    <h2>🧠 Deep Learning Projects</h2>
+
+    <section class="project">
+      <h3>Prompt Engineering with LLaMA 3</h3>
+      <p>Prompt design experiments on LLaMA 3 (HF Transformers).</p>
+      <a href="https://github.com/federicodeluca/prompt_engineering_llama3" target="_blank">View on GitHub</a>
+    </section>
+
+    <section class="project">
+      <h3>CNN on MNIST</h3>
+      <p>Digit classification with PyTorch CNN on MNIST dataset.</p>
+      <a href="https://github.com/federicodeluca/-CNN_mnist_dataset" target="_blank">View on GitHub</a>
+    </section>
+
+    <section class="project">
+      <h3>Question Classification with BERT</h3>
+      <p>Fine-tuning BERT for question type classification.</p>
+      <a href="https://github.com/federicodeluca/question_classification_bert" target="_blank">View on GitHub</a>
+    </section>
   </div>
 
   <div class="contact" style="max-width: 800px; margin: 3rem auto; background: white; padding: 2rem; border-radius: 16px; color: #1e3a8a; text-align: center;">
@@ -94,6 +173,11 @@
   </footer>
 
   <script>
+    window.addEventListener("load", () => {
+      const splash = document.getElementById("splash-screen");
+      splash.style.display = "none";
+    });
+
     function setLang(lang) {
       const show = lang === 'en';
       document.getElementById('bio-en').style.display = show ? 'block' : 'none';
@@ -114,4 +198,3 @@
   </script>
 </body>
 </html>
-
