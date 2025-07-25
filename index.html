@@ -117,20 +117,6 @@
       <a href="https://github.com/federicodeluca" target="_blank">GitHub</a>
     </p>
 
-    <section class="project">
-      <h3>AI Sentiment Analysis</h3>
-      <p id="gen-en">Sentiment and content analysis of articles and tweets about Artificial Intelligence using R (wordclouds, topic modeling, VADER, clustering).</p>
-      <p id="gen-it" style="display:none">Analisi del contenuto e del sentiment su articoli e tweet sull'Intelligenza Artificiale, realizzata in R (wordcloud, topic modeling, VADER, clustering).</p>
-      <a href="https://github.com/federicodeluca/AI_sentiment_analysis" target="_blank">View on GitHub</a>
-    </section>
-
-    <section class="project">
-      <h3>Gender Equality Report</h3>
-      <p id="gen2-en">Comparative project on diversity and inclusion strategies in Danone and CNPR. Based on UNI PDR 125:2022, surveys and analysis in R.</p>
-      <p id="gen2-it" style="display:none">Progetto comparativo sulle strategie di diversity e inclusion in Danone e CNPR. Basato su UNI PDR 125:2022, questionari e analisi in R.</p>
-      <a href="/Executive_Summary_De_Luca.pdf" target="_blank">Download Executive Summary (PDF)</a>
-    </section>
-
     <h2>📊 Machine Learning Projects</h2>
 
     <section class="project">
@@ -174,8 +160,10 @@
 
   <script>
     window.addEventListener("load", () => {
-      const splash = document.getElementById("splash-screen");
-      splash.style.display = "none";
+      setTimeout(() => {
+        const splash = document.getElementById("splash-screen");
+        splash.style.display = "none";
+      }, 1800); // forza visibilità minima
     });
 
     function setLang(lang) {
@@ -184,10 +172,6 @@
       document.getElementById('bio-it').style.display = show ? 'none' : 'block';
       document.getElementById('ai-en').style.display = show ? 'block' : 'none';
       document.getElementById('ai-it').style.display = show ? 'none' : 'block';
-      document.getElementById('gen-en').style.display = show ? 'block' : 'none';
-      document.getElementById('gen-it').style.display = show ? 'none' : 'block';
-      document.getElementById('gen2-en').style.display = show ? 'block' : 'none';
-      document.getElementById('gen2-it').style.display = show ? 'none' : 'block';
       document.getElementById('contact-en').style.display = show ? 'block' : 'none';
       document.getElementById('contact-it').style.display = show ? 'none' : 'block';
       document.getElementById('contact-title-en').style.display = show ? 'inline' : 'none';
